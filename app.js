@@ -16,7 +16,7 @@ const catchphraseButton = document.getElementById('catchphrase-button');
 let headCount = 0;
 let midCount = 0;
 let botCount = 0;
-let catchprasesSaved = [];
+let catchphrasesSaved = [];
 
 headDropdown.addEventListener('change', () => {
     // get the value of the head dropdown
@@ -55,13 +55,14 @@ bottomDropdown.addEventListener('change', () => {
 
 catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
-    
+    const newCatchphrase = catchphraseInput.value;
     // push the new catchphrase to the catchphrase array in state
-
+    catchphrasesSaved.push(newCatchphrase);
+    //console.log(`${catchphrasesSaved}`)
     // clear out the form input's value so it's empty to the user
-   
+    catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
-
+    console.log
 });
 
 function displayStats() {
