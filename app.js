@@ -6,7 +6,7 @@ const headEl = document.getElementById('head');
 const middleEl = document.getElementById('middle');
 const bottomEl = document.getElementById('bottom');
 const reportEl = document.getElementById('report');
-const catchphrasesEl = document.getElementById('catchphrases');
+const catchPhrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
@@ -17,7 +17,7 @@ let headCount = 0;
 let midCount = 0;
 let botCount = 0;
 //let reportArr = [headCount, midCount, botCount];
-let catchphrasesSaved = [];
+let catchPhrasesSaved = [];
 
 headDropdown.addEventListener('change', () => {
     // get the value of the head dropdown
@@ -58,12 +58,12 @@ catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
     const newCatchphrase = catchphraseInput.value;
     // push the new catchphrase to the catchphrase array in state
-    catchphrasesSaved.push(newCatchphrase);
+    catchPhrasesSaved.push(newCatchphrase);
     //console.log(`${catchphrasesSaved}`)
     // clear out the form input's value so it's empty to the user
     catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
-
+    displayCatchphrases();
 });
 
 function displayStats() {
@@ -72,14 +72,19 @@ function displayStats() {
     and the pants ${botCount} times.`;
 }
 
-//function displayCatchphrases() {
+function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-    catchPhrasesEl = '';
+
     // loop through each catchphrase in state
-    
+        //console.log(catchPhrasesSaved);
     // and for each catchphrase
+    for (let catchphrase of catchPhrasesSaved) {
+        const listOfCatch = document.createElement('div');
+        catchPhrasesEl.appendChild(listOfCatch);
+        listOfCatch.textContent = `And who could forget your catchphrases: ${catchphrase}.`;
     
+    }
     // create an HTML element with the catchphrase as its text content
     
     // and append that HTML element to the cleared-out DOM
-
+}
