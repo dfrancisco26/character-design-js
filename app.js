@@ -6,7 +6,7 @@ const headEl = document.getElementById('head');
 const middleEl = document.getElementById('middle');
 const bottomEl = document.getElementById('bottom');
 const reportEl = document.getElementById('report');
-const catchPhrasesEl = document.getElementById('catchphrases');
+const catchphraseEl = document.getElementById('catchphrase');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
@@ -74,15 +74,15 @@ function displayStats() {
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-
+    catchphraseEl.textContent = '';
     // loop through each catchphrase in state
-        //console.log(catchPhrasesSaved);
+    console.log(catchPhrasesSaved);
     // and for each catchphrase
     for (let catchphrase of catchPhrasesSaved) {
-        const listOfCatch = document.createElement('div');
-        catchPhrasesEl.appendChild(listOfCatch);
-        listOfCatch.textContent = `And who could forget your catchphrases: ${catchphrase}.`;
-    
+        const p = document.createElement('p');
+        p.classList.add('catchphrase');
+        p.textContent = `And who could forget your catchphrases: ${catchphrase}.`;
+        catchphraseEl.append(p);
     }
     // create an HTML element with the catchphrase as its text content
     
