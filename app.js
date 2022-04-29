@@ -81,7 +81,8 @@ function displayCatchphrases() {
     for (let catchphrase of catchPhrasesSaved) {
         const p = document.createElement('p');
         p.classList.add('catchphrase');
-        p.textContent = `And who could forget your catchphrases: ${catchphrase}.`;
+        p.textContent = catchphrase;
+        //p.textContent = `And who could forget your catchphrases: ${catchphrase}.`;
         catchphraseEl.append(p);
     }
     // create an HTML element with the catchphrase as its text content
